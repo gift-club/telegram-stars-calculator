@@ -1,26 +1,58 @@
 {
   "name": "@gift-club/telegram-stars-calculator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "What any number of Telegram Stars costs on Fragment and in the App Store in 18 countries. Zero dependencies, plus a drop-in <telegram-stars-calculator> web component.",
   "type": "module",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "exports": {
-    ".": { "types": "./src/index.d.ts", "default": "./src/index.js" },
-    "./widget": { "types": "./src/widget.d.ts", "default": "./src/widget.js" },
-    "./prices": { "types": "./src/prices.d.ts", "default": "./src/prices.js" }
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./widget": {
+      "types": "./src/widget.d.ts",
+      "default": "./src/widget.js"
+    },
+    "./prices": {
+      "types": "./src/prices.d.ts",
+      "default": "./src/prices.js"
+    }
   },
-  "files": ["src", "README.md", "LICENSE"],
-  "sideEffects": ["./src/widget.js"],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "./src/widget.js"
+  ],
   "scripts": {
     "test": "node --test test/*.test.js",
     "build:site": "node scripts/build-site.mjs"
   },
-  "keywords": ["telegram", "telegram-stars", "stars", "fragment", "app-store", "calculator", "price", "web-component", "telegram-mini-app"],
+  "keywords": [
+    "telegram",
+    "telegram-stars",
+    "stars",
+    "fragment",
+    "app-store",
+    "calculator",
+    "price",
+    "web-component",
+    "telegram-mini-app"
+  ],
   "homepage": "https://gift-club.github.io/telegram-stars-calculator/",
-  "repository": { "type": "git", "url": "git+https://github.com/gift-club/telegram-stars-calculator.git" },
-  "bugs": { "url": "https://github.com/gift-club/telegram-stars-calculator/issues" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gift-club/telegram-stars-calculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gift-club/telegram-stars-calculator/issues"
+  },
   "author": "Gift Club (https://giftclub.app/)",
   "license": "MIT",
-  "engines": { "node": ">=18" }
+  "engines": {
+    "node": ">=18"
+  }
 }

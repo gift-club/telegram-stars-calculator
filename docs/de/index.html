@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Telegram-Stars-Rechner: npm-Paket und Web Component</title>
+<meta name="description" content="JavaScript ohne Abhängigkeiten berechnet den Preis beliebig vieler Telegram Stars bei Fragment und im App Store von 18 Ländern. npm-Paket und fertiges Widget, MIT.">
+<link rel="canonical" href="https://gift-club.github.io/telegram-stars-calculator/de/">
+<link rel="alternate" hreflang="en" href="https://gift-club.github.io/telegram-stars-calculator/">
+<link rel="alternate" hreflang="ru" href="https://gift-club.github.io/telegram-stars-calculator/ru/">
+<link rel="alternate" hreflang="uk" href="https://gift-club.github.io/telegram-stars-calculator/uk/">
+<link rel="alternate" hreflang="es" href="https://gift-club.github.io/telegram-stars-calculator/es/">
+<link rel="alternate" hreflang="pl" href="https://gift-club.github.io/telegram-stars-calculator/pl/">
+<link rel="alternate" hreflang="it" href="https://gift-club.github.io/telegram-stars-calculator/it/">
+<link rel="alternate" hreflang="tr" href="https://gift-club.github.io/telegram-stars-calculator/tr/">
+<link rel="alternate" hreflang="de" href="https://gift-club.github.io/telegram-stars-calculator/de/">
+<link rel="alternate" hreflang="fr" href="https://gift-club.github.io/telegram-stars-calculator/fr/">
+<link rel="alternate" hreflang="x-default" href="https://gift-club.github.io/telegram-stars-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Telegram-Stars-Rechner für JavaScript">
+<meta property="og:title" content="Telegram-Stars-Rechner: npm-Paket und Web Component">
+<meta property="og:description" content="JavaScript ohne Abhängigkeiten berechnet den Preis beliebig vieler Telegram Stars bei Fragment und im App Store von 18 Ländern. npm-Paket und fertiges Widget, MIT.">
+<meta property="og:url" content="https://gift-club.github.io/telegram-stars-calculator/de/">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0b14">
+<link rel="icon" href="/telegram-stars-calculator/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/telegram-stars-calculator/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/telegram-stars-calculator/icon-192.png">
+<link rel="apple-touch-icon" href="/telegram-stars-calculator/apple-touch-icon.png">
+<style>:root{color-scheme:dark;--bg:#0d0b14;--panel:#17141f;--line:#2a2535;--ink:#f3f0fa;--muted:#a59fb5;--accent:#ffcf4a;--link:#8ec5ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--link)}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);text-decoration:none}
+.brand img{display:block;width:32px;height:32px;border-radius:8px}
+.brand em{font-style:normal;color:var(--accent)}
+nav ul{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a[aria-current=page]{color:var(--ink);font-weight:600}
+main{padding:28px 0 40px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
+h2{font-size:24px;line-height:1.25;margin:36px 0 10px}
+h3{font-size:19px;margin:24px 0 8px}
+.lead{font-size:18px;color:var(--ink)}
+.meta{color:var(--muted);font-size:14px}
+.answer{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:18px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.table-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+pre,code{overflow-wrap:anywhere}
+pre{white-space:pre}
+th{background:var(--panel);position:sticky;top:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+caption{caption-side:top;text-align:left;padding:8px 10px;color:var(--muted);font-size:14px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--panel);padding:1px 5px;border-radius:5px}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto}
+pre code{background:none;padding:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;color:var(--muted)}
+.langs a{color:var(--muted)}
+.langs a[aria-current=true]{color:var(--ink);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+iframe{max-width:100%}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Telegram Stars calculator","description":"JavaScript ohne Abhängigkeiten berechnet den Preis beliebig vieler Telegram Stars bei Fragment und im App Store von 18 Ländern. npm-Paket und fertiges Widget, MIT.","url":"https://gift-club.github.io/telegram-stars-calculator/de/","codeRepository":"https://github.com/gift-club/telegram-stars-calculator","programmingLanguage":"JavaScript","runtimePlatform":["Node.js","Web browser"],"license":"https://opensource.org/licenses/MIT","version":"1.0.0","author":{"@type":"Organization","@id":"https://giftclub.app/#organization","name":"Gift Club","url":"https://giftclub.app/","sameAs":["https://github.com/gift-club","https://gift-club.github.io/"]},"publisher":{"@type":"Organization","@id":"https://giftclub.app/#organization","name":"Gift Club","url":"https://giftclub.app/","sameAs":["https://github.com/gift-club","https://gift-club.github.io/"]},"isBasedOn":"https://gift-club.github.io/telegram-gifts-dataset/stars-prices/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Telegram-Stars-Rechner für JavaScript","item":"https://gift-club.github.io/telegram-stars-calculator/de/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wie viele Dollar kosten 1.000 Telegram Stars?","acceptedAnswer":{"@type":"Answer","text":"15,00 $ bei Fragment und 19,99 $ im US-App-Store."}},{"@type":"Question","name":"Ruft das Paket Live-Preise ab?","acceptedAnswer":{"@type":"Answer","text":"Nein. Es enthält einen datierten Schnappschuss, deshalb sind die Ergebnisse reproduzierbar und funktionieren offline. Aktualisiere das Paket, um neuere Preise zu bekommen."}},{"@type":"Question","name":"Kann ich es in einer kommerziellen App oder einem Bot nutzen?","acceptedAnswer":{"@type":"Answer","text":"Ja, es steht unter der MIT-Lizenz."}},{"@type":"Question","name":"Warum gibt es keinen Google-Play-Preis?","acceptedAnswer":{"@type":"Answer","text":"Google Play veröffentlicht keine öffentliche Preisliste, die sich auslesen ließe, deshalb deckt das Paket nur Fragment und den App Store ab."}}]}</script>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="/telegram-stars-calculator/de/"><img src="/telegram-stars-calculator/logo-64.png" width="32" height="32" alt=""><span>Gift Club <em>Stars-Rechner</em></span></a>
+<nav aria-label="Abschnitte der Dokumentation"><ul><li><a href="/telegram-stars-calculator/de/" aria-current="page">Überblick</a></li><li><a href="/telegram-stars-calculator/de/api/">API</a></li><li><a href="/telegram-stars-calculator/de/embed/">Einbetten</a></li></ul></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Telegram-Stars-Rechner für JavaScript</h1>
+<p class="lead">Berechne, was beliebig viele Telegram Stars bei Fragment und im App Store von 18 Ländern kosten, in Node.js oder im Browser. Keine Abhängigkeiten, keine Netzwerkaufrufe.</p>
+<p class="meta">Preise gelesen am: <time datetime="2026-10-30">2026-10-30</time></p>
+
+<div class="answer"><p>1.000 Telegram Stars kosten bei Fragment <strong>15,00 $</strong> und im US-App-Store <strong>19,99 $</strong>, also ist ein Stern bei Fragment 25 % günstiger. Das Paket liefert diese Zahlen für jede Menge und jedes Land.</p></div>
+<div class="table-wrap"><table><caption>US-App-Store und Fragment, aus dem Paket</caption><thead><tr><th scope="col" class="num">Sterne</th><th scope="col" class="num">Fragment</th><th scope="col" class="num">App Store (USA)</th></tr></thead><tbody><tr><td class="num">100</td><td class="num">1,50 $</td><td class="num">1,99 $</td></tr><tr><td class="num">500</td><td class="num">7,50 $</td><td class="num">9,99 $</td></tr><tr><td class="num">1.000</td><td class="num">15,00 $</td><td class="num">19,99 $</td></tr><tr><td class="num">2.500</td><td class="num">37,50 $</td><td class="num">50,90 $</td></tr></tbody></table></div>
+<h2>Installation</h2>
+<pre><code>npm install @gift-club/telegram-stars-calculator</code></pre>
+<pre><code>import { compare } from &quot;@gift-club/telegram-stars-calculator&quot;;
+
+const r = compare(1000, &quot;us&quot;);
+r.fragment.usd;     // 15
+r.appStore.price;   // 19.99
+r.saving;           // 0.2496</code></pre>
+<p><code>compare()</code> liefert beide Preise, die im App Store zu kaufenden Pakete und die Ersparnis. Fragment verkauft jede Menge ab 50 Sternen für je 0,015 $; der App Store verkauft feste Pakete, deshalb rundet der Plan auf die kleinste Menge auf, die sich aus den Paketen bilden lässt.</p>
+<h2>Fertiges Widget</h2>
+<p>Ein einziges Script-Tag fügt ein <code>&lt;telegram-stars-calculator&gt;</code>-Element in neun Sprachen ein. Es läuft komplett auf der Seite, zeigt keine Links und sendet keine Anfragen.</p>
+<pre><code>&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@gift-club/telegram-stars-calculator@1.0.0/src/widget.js&quot;&gt;&lt;/script&gt;
+&lt;telegram-stars-calculator lang=&quot;de&quot; store=&quot;de&quot; stars=&quot;1000&quot;&gt;&lt;/telegram-stars-calculator&gt;</code></pre>
+<p><a href="https://gift-club.github.io/telegram-stars-calculator/de/demo/">Widget ausprobieren</a></p>
+<h2>Was es kann</h2>
+<ul><li>Berechnet jede Menge von 1 bis 100.000 Sternen in 18 App-Store-Ländern, in der Währung des jeweiligen Stores.</li><li>Findet die zu kaufenden App-Store-Pakete: die kleinste Menge, die mindestens der gewünschten entspricht, mit möglichst wenigen Käufen.</li><li>Rechnet den Dollarpreis von Fragment mit einem datierten Zentralbankkurs in die Währung jedes Stores um.</li><li>Bringt TypeScript-Typen, ES-Module und Tests mit; läuft in Node 18+ und in allen modernen Browsern.</li></ul>
+<h2>Enthaltene Länder</h2>
+<p>Brasilien (BRL) · Dänemark (DKK) · Deutschland (EUR) · Finnland (EUR) · Frankreich (EUR) · Indien (INR) · Indonesien (IDR) · Italien (EUR) · Kasachstan (KZT) · Mexiko (MXN) · Norwegen (NOK) · Polen (PLN) · russland (RUB) · Saudi-Arabien (SAR) · Schweden (SEK) · Spanien (EUR) · Türkei (TRY) · Vereinigte Staaten (USD)</p>
+<p class="meta">Die Preise stammen aus <a href="https://gift-club.github.io/telegram-gifts-dataset/de/stars-prices/">Telegram Gifts &amp; Stars Dataset</a>, gelesen bis 2026-10-30. Jeder Preis ist der, den Apple in diesem Land ausweist; keiner ist umgerechnet.</p>
+<h2>Weiterlesen bei Gift Club</h2><ul><li><a href="https://giftclub.app/de/blog/buy-telegram-stars">Telegram Sterne kaufen: wo sie am günstigsten sind (2026)</a></li><li><a href="https://giftclub.app/de/blog/telegram-stars-price">Wie viel kosten Telegram Sterne? Preise in Euro</a></li></ul>
+<h2>Fragen</h2>
+<details><summary>Wie viele Dollar kosten 1.000 Telegram Stars?</summary><p>15,00 $ bei Fragment und 19,99 $ im US-App-Store.</p></details>
+<details><summary>Ruft das Paket Live-Preise ab?</summary><p>Nein. Es enthält einen datierten Schnappschuss, deshalb sind die Ergebnisse reproduzierbar und funktionieren offline. Aktualisiere das Paket, um neuere Preise zu bekommen.</p></details>
+<details><summary>Kann ich es in einer kommerziellen App oder einem Bot nutzen?</summary><p>Ja, es steht unter der MIT-Lizenz.</p></details>
+<details><summary>Warum gibt es keinen Google-Play-Preis?</summary><p>Google Play veröffentlicht keine öffentliche Preisliste, die sich auslesen ließe, deshalb deckt das Paket nur Fragment und den App Store ab.</p></details>
+
+</div></main>
+<footer><div class="wrap">
+<p class="langs" aria-label="Sprachen"><a href="/telegram-stars-calculator/" hreflang="en" lang="en">English</a><a href="/telegram-stars-calculator/ru/" hreflang="ru" lang="ru">Русский</a><a href="/telegram-stars-calculator/uk/" hreflang="uk" lang="uk">Українська</a><a href="/telegram-stars-calculator/es/" hreflang="es" lang="es">Español</a><a href="/telegram-stars-calculator/pl/" hreflang="pl" lang="pl">Polski</a><a href="/telegram-stars-calculator/it/" hreflang="it" lang="it">Italiano</a><a href="/telegram-stars-calculator/tr/" hreflang="tr" lang="tr">Türkçe</a><a href="/telegram-stars-calculator/de/" hreflang="de" lang="de" aria-current="true">Deutsch</a><a href="/telegram-stars-calculator/fr/" hreflang="fr" lang="fr">Français</a></p>
+<p>Open Source von <a href="https://giftclub.app/de/">Gift Club</a>, der Telegram Mini App mit Geschenk-Boxen und Spielen.</p>
+<p>Mehr von Gift Club: <a href="/telegram-gifts-dataset/de/">Telegram-Daten</a> · <a href="/provably-fair-verifier/de/">Provably fair verifier</a> · <a href="https://github.com/gift-club/telegram-stars-calculator">Quellcode auf GitHub</a></p>
+
+</div></footer>
+</body>
+</html>

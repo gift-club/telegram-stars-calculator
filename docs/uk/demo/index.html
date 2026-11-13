@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Демо віджета калькулятора Telegram Stars</title>
+<meta name="description" content="Жива демонстрація веб-компонента &lt;telegram-stars-calculator&gt;.">
+<meta name="robots" content="noindex,follow">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Калькулятор Telegram Stars для JavaScript">
+<meta property="og:title" content="Демо віджета калькулятора Telegram Stars">
+<meta property="og:description" content="Жива демонстрація веб-компонента &lt;telegram-stars-calculator&gt;.">
+<meta property="og:url" content="https://gift-club.github.io/telegram-stars-calculator/uk/demo/">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0b14">
+<link rel="icon" href="/telegram-stars-calculator/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/telegram-stars-calculator/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/telegram-stars-calculator/icon-192.png">
+<link rel="apple-touch-icon" href="/telegram-stars-calculator/apple-touch-icon.png">
+<style>:root{color-scheme:dark;--bg:#0d0b14;--panel:#17141f;--line:#2a2535;--ink:#f3f0fa;--muted:#a59fb5;--accent:#ffcf4a;--link:#8ec5ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--link)}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);text-decoration:none}
+.brand img{display:block;width:32px;height:32px;border-radius:8px}
+.brand em{font-style:normal;color:var(--accent)}
+nav ul{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a[aria-current=page]{color:var(--ink);font-weight:600}
+main{padding:28px 0 40px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
+h2{font-size:24px;line-height:1.25;margin:36px 0 10px}
+h3{font-size:19px;margin:24px 0 8px}
+.lead{font-size:18px;color:var(--ink)}
+.meta{color:var(--muted);font-size:14px}
+.answer{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:18px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.table-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+pre,code{overflow-wrap:anywhere}
+pre{white-space:pre}
+th{background:var(--panel);position:sticky;top:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+caption{caption-side:top;text-align:left;padding:8px 10px;color:var(--muted);font-size:14px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--panel);padding:1px 5px;border-radius:5px}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto}
+pre code{background:none;padding:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;color:var(--muted)}
+.langs a{color:var(--muted)}
+.langs a[aria-current=true]{color:var(--ink);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+iframe{max-width:100%}</style>
+
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="/telegram-stars-calculator/uk/"><img src="/telegram-stars-calculator/logo-64.png" width="32" height="32" alt=""><span>Gift Club <em>Калькулятор Stars</em></span></a>
+<nav aria-label="Розділи документації"><ul><li><a href="/telegram-stars-calculator/uk/">Огляд</a></li><li><a href="/telegram-stars-calculator/uk/api/">API</a></li><li><a href="/telegram-stars-calculator/uk/embed/">Вбудовування</a></li></ul></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Демо віджета</h1>
+
+
+<p>Елемент <code>&lt;telegram-stars-calculator&gt;</code> із цього репозиторію в роботі. Повний калькулятор з усіма наборами в таблиці є на <a href="https://giftclub.app/uk/tools/telegram-stars-calculator">Gift Club</a>.</p>
+<script type="module" src="/telegram-stars-calculator/src/widget.js"></script>
+<telegram-stars-calculator lang="uk" store="us" stars="1000" style="--tsc-bg:#17141f;--tsc-ink:#f3f0fa;--tsc-muted:#a59fb5;--tsc-line:#2a2535;--tsc-accent:#ffcf4a"></telegram-stars-calculator>
+</div></main>
+<footer><div class="wrap">
+<p class="langs" aria-label="Мови"><a href="/telegram-stars-calculator/demo/" hreflang="en" lang="en">English</a><a href="/telegram-stars-calculator/ru/demo/" hreflang="ru" lang="ru">Русский</a><a href="/telegram-stars-calculator/uk/demo/" hreflang="uk" lang="uk" aria-current="true">Українська</a><a href="/telegram-stars-calculator/es/demo/" hreflang="es" lang="es">Español</a><a href="/telegram-stars-calculator/pl/demo/" hreflang="pl" lang="pl">Polski</a><a href="/telegram-stars-calculator/it/demo/" hreflang="it" lang="it">Italiano</a><a href="/telegram-stars-calculator/tr/demo/" hreflang="tr" lang="tr">Türkçe</a><a href="/telegram-stars-calculator/de/demo/" hreflang="de" lang="de">Deutsch</a><a href="/telegram-stars-calculator/fr/demo/" hreflang="fr" lang="fr">Français</a></p>
+<p>Відкритий код від <a href="https://giftclub.app/uk/">Gift Club</a>, Telegram Mini App з кейсами з подарунками та іграми.</p>
+<p>Ще від Gift Club: <a href="/telegram-gifts-dataset/uk/">Дані Telegram</a> · <a href="/provably-fair-verifier/uk/">Доказово чесна перевірка</a> · <a href="https://github.com/gift-club/telegram-stars-calculator">Вихідний код на GitHub</a></p>
+
+</div></footer>
+</body>
+</html>

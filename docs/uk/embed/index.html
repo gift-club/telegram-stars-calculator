@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вбудувати калькулятор Telegram Stars на сайт: iframe, віджет</title>
+<meta name="description" content="Додай безкоштовний калькулятор цін Telegram Stars на будь-який сайт через iframe або як веб-компонент із темами. Без реєстрації й ключів.">
+<link rel="canonical" href="https://gift-club.github.io/telegram-stars-calculator/uk/embed/">
+<link rel="alternate" hreflang="en" href="https://gift-club.github.io/telegram-stars-calculator/embed/">
+<link rel="alternate" hreflang="ru" href="https://gift-club.github.io/telegram-stars-calculator/ru/embed/">
+<link rel="alternate" hreflang="uk" href="https://gift-club.github.io/telegram-stars-calculator/uk/embed/">
+<link rel="alternate" hreflang="es" href="https://gift-club.github.io/telegram-stars-calculator/es/embed/">
+<link rel="alternate" hreflang="pl" href="https://gift-club.github.io/telegram-stars-calculator/pl/embed/">
+<link rel="alternate" hreflang="it" href="https://gift-club.github.io/telegram-stars-calculator/it/embed/">
+<link rel="alternate" hreflang="tr" href="https://gift-club.github.io/telegram-stars-calculator/tr/embed/">
+<link rel="alternate" hreflang="de" href="https://gift-club.github.io/telegram-stars-calculator/de/embed/">
+<link rel="alternate" hreflang="fr" href="https://gift-club.github.io/telegram-stars-calculator/fr/embed/">
+<link rel="alternate" hreflang="x-default" href="https://gift-club.github.io/telegram-stars-calculator/embed/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Калькулятор Telegram Stars для JavaScript">
+<meta property="og:title" content="Вбудувати калькулятор Telegram Stars на сайт: iframe, віджет">
+<meta property="og:description" content="Додай безкоштовний калькулятор цін Telegram Stars на будь-який сайт через iframe або як веб-компонент із темами. Без реєстрації й ключів.">
+<meta property="og:url" content="https://gift-club.github.io/telegram-stars-calculator/uk/embed/">
+<meta property="og:locale" content="uk_UA">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0b14">
+<link rel="icon" href="/telegram-stars-calculator/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/telegram-stars-calculator/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/telegram-stars-calculator/icon-192.png">
+<link rel="apple-touch-icon" href="/telegram-stars-calculator/apple-touch-icon.png">
+<style>:root{color-scheme:dark;--bg:#0d0b14;--panel:#17141f;--line:#2a2535;--ink:#f3f0fa;--muted:#a59fb5;--accent:#ffcf4a;--link:#8ec5ff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--link)}
+a:hover{text-decoration-thickness:2px}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);text-decoration:none}
+.brand img{display:block;width:32px;height:32px;border-radius:8px}
+.brand em{font-style:normal;color:var(--accent)}
+nav ul{display:flex;flex-wrap:wrap;gap:6px 14px;list-style:none;margin:0;padding:0;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a[aria-current=page]{color:var(--ink);font-weight:600}
+main{padding:28px 0 40px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 12px}
+h2{font-size:24px;line-height:1.25;margin:36px 0 10px}
+h3{font-size:19px;margin:24px 0 8px}
+.lead{font-size:18px;color:var(--ink)}
+.meta{color:var(--muted);font-size:14px}
+.answer{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:18px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.table-wrap{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+pre,code{overflow-wrap:anywhere}
+pre{white-space:pre}
+th{background:var(--panel);position:sticky;top:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+caption{caption-side:top;text-align:left;padding:8px 10px;color:var(--muted);font-size:14px}
+code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+code{background:var(--panel);padding:1px 5px;border-radius:5px}
+pre{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;overflow-x:auto}
+pre code{background:none;padding:0}
+details{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
+summary{cursor:pointer;font-weight:600}
+.langs{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:14px;color:var(--muted)}
+.langs a{color:var(--muted)}
+.langs a[aria-current=true]{color:var(--ink);font-weight:600;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--muted);font-size:14px}
+footer p{margin:6px 0}
+iframe{max-width:100%}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Калькулятор Telegram Stars для JavaScript","item":"https://gift-club.github.io/telegram-stars-calculator/uk/"},{"@type":"ListItem","position":2,"name":"Вбудовування","item":"https://gift-club.github.io/telegram-stars-calculator/uk/embed/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Вбудовувати безкоштовно?","acceptedAnswer":{"@type":"Answer","text":"Так, на будь-якому сайті, зокрема комерційному."}},{"@type":"Question","name":"Чи стежить вбудований віджет за відвідувачами?","acceptedAnswer":{"@type":"Answer","text":"Веб-компонент не ставить кукі й не робить мережевих запитів. iframe — це сторінка giftclub.app, яка рахує відвідування через Google Analytics; якщо сторонні запити не потрібні зовсім, бери веб-компонент."}},{"@type":"Question","name":"Які мови підтримуються?","acceptedAnswer":{"@type":"Answer","text":"Веб-компонент розмовляє англійською, російською, українською, іспанською, польською, італійською, турецькою, німецькою та французькою."}}]}</script>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="/telegram-stars-calculator/uk/"><img src="/telegram-stars-calculator/logo-64.png" width="32" height="32" alt=""><span>Gift Club <em>Калькулятор Stars</em></span></a>
+<nav aria-label="Розділи документації"><ul><li><a href="/telegram-stars-calculator/uk/">Огляд</a></li><li><a href="/telegram-stars-calculator/uk/api/">API</a></li><li><a href="/telegram-stars-calculator/uk/embed/" aria-current="page">Вбудовування</a></li></ul></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Вбудуй калькулятор на свій сайт</h1>
+
+
+
+<p>Два способи розмістити калькулятор Telegram Stars на сторінці. Обидва безкоштовні.</p>
+<h2>Варіант 1: iframe</h2>
+<p>Встав це туди, де має з’явитися калькулятор. Він показує актуальні ціни й вміщується в колонку від 320 px.</p>
+<pre><code>&lt;iframe src=&quot;https://giftclub.app/embed/telegram-stars-calculator&quot; title=&quot;Калькулятор Telegram Stars&quot; width=&quot;100%&quot; height=&quot;880&quot; style=&quot;max-width:480px;border:0;display:block&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</code></pre>
+<p>Посилання на джерело під ним вітається, але не обов’язкове:</p>
+<pre><code>&lt;p style=&quot;max-width:480px;font-size:14px&quot;&gt;Калькулятор Telegram Stars · &lt;a href=&quot;https://giftclub.app/uk/tools/telegram-stars-calculator&quot;&gt;Gift Club&lt;/a&gt;&lt;/p&gt;</code></pre>
+<h2>Попередній перегляд</h2>
+<iframe src="https://giftclub.app/embed/telegram-stars-calculator" title="Калькулятор Telegram Stars" width="100%" height="880" style="max-width:480px;border:0;display:block" loading="lazy"></iframe>
+<h2>Варіант 2: веб-компонент</h2>
+<p>Розміщується в тебе й повністю стилізується: скрипт працює на твоїй сторінці, не малює посилань і не робить запитів.</p>
+<pre><code>&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@gift-club/telegram-stars-calculator@1.0.0/src/widget.js&quot;&gt;&lt;/script&gt;
+&lt;telegram-stars-calculator lang=&quot;uk&quot;&gt;&lt;/telegram-stars-calculator&gt;</code></pre>
+<p>Підлаштуй під свою тему через CSS-змінні:</p>
+<pre><code>telegram-stars-calculator {
+  --tsc-bg: #0d0b14;
+  --tsc-ink: #f3f0fa;
+  --tsc-muted: #a59fb5;
+  --tsc-line: #2a2535;
+  --tsc-accent: #ffcf4a;
+}</code></pre>
+<h2>Запитання</h2>
+<details><summary>Вбудовувати безкоштовно?</summary><p>Так, на будь-якому сайті, зокрема комерційному.</p></details>
+<details><summary>Чи стежить вбудований віджет за відвідувачами?</summary><p>Веб-компонент не ставить кукі й не робить мережевих запитів. iframe — це сторінка giftclub.app, яка рахує відвідування через Google Analytics; якщо сторонні запити не потрібні зовсім, бери веб-компонент.</p></details>
+<details><summary>Які мови підтримуються?</summary><p>Веб-компонент розмовляє англійською, російською, українською, іспанською, польською, італійською, турецькою, німецькою та французькою.</p></details>
+
+</div></main>
+<footer><div class="wrap">
+<p class="langs" aria-label="Мови"><a href="/telegram-stars-calculator/embed/" hreflang="en" lang="en">English</a><a href="/telegram-stars-calculator/ru/embed/" hreflang="ru" lang="ru">Русский</a><a href="/telegram-stars-calculator/uk/embed/" hreflang="uk" lang="uk" aria-current="true">Українська</a><a href="/telegram-stars-calculator/es/embed/" hreflang="es" lang="es">Español</a><a href="/telegram-stars-calculator/pl/embed/" hreflang="pl" lang="pl">Polski</a><a href="/telegram-stars-calculator/it/embed/" hreflang="it" lang="it">Italiano</a><a href="/telegram-stars-calculator/tr/embed/" hreflang="tr" lang="tr">Türkçe</a><a href="/telegram-stars-calculator/de/embed/" hreflang="de" lang="de">Deutsch</a><a href="/telegram-stars-calculator/fr/embed/" hreflang="fr" lang="fr">Français</a></p>
+<p>Відкритий код від <a href="https://giftclub.app/uk/">Gift Club</a>, Telegram Mini App з кейсами з подарунками та іграми.</p>
+<p>Ще від Gift Club: <a href="/telegram-gifts-dataset/uk/">Дані Telegram</a> · <a href="/provably-fair-verifier/uk/">Доказово чесна перевірка</a> · <a href="https://github.com/gift-club/telegram-stars-calculator">Вихідний код на GitHub</a></p>
+
+</div></footer>
+</body>
+</html>

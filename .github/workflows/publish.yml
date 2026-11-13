@@ -1,0 +1,44 @@
+# Publishes the package to npm when a GitHub release is published.
+# npm trusted publishing: npm verifies this workflow over OIDC, so no npm token is stored anywhere.
+# Set it up once on npmjs.com: package Settings → Trusted publishing → GitHub Actions,
+# organisation "gift-club", repository "telegram-stars-calculator", workflow "publish.yml".
+#
+# To release: npm version patch (or minor / major), push with --follow-tags, then publish a
+# GitHub release for the new tag (v1.0.1 for version 1.0.1).
+name: Publish to npm
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write # lets npm verify that this workflow is publishing
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Check the release tag matches package.json
+        run: |
+          expected="v$(node -p "require('./package.json').version")"
+          if [ "$GITHUB_REF_NAME" != "$expected" ]; then
+            echo "Release tag $GITHUB_REF_NAME does not match package.json ($expected)."
+            exit 1
+          fi
+
+      # No dependencies, so nothing to install.
+      - run: npm test
+
+      - run: npm publish --access public
